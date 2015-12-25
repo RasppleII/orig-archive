@@ -321,8 +321,11 @@ a USB hub, which isn’t necessarily obvious. If you have a USB hub, try the
 leftmost or topmost port, and if that doesn’t work, try the rightmost or
 bottommost port. If you want to definitively know, see the note at the end.
 
-If you have an Apple IIe, then “printer port” or “modem port” means a Super
-Serial Card in slot 1 or 2, respectively.
+If you have an Apple IIe with a single Super Serial Card, then “modem port” in
+these instructions refers to that card, and “printer port” is unavailable. If
+you have two Super Serial Cards, then the order is the reverse of what you
+might expect; “modem port” refers to slot 1, while “printer port” refers to
+slot 2. (Thanks to David Laffineuse for this report.)
 {: .space-after }
 
 ### You have one USB-to-serial adapter, and want to use it for virtual drives
