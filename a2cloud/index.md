@@ -10,42 +10,42 @@ This file is an export of the WordPress site for A2CLOUD, pulled in October
 been pretty heavily modified to convert the page to Markdown format.
 -->
 
-* [A2CLOUD home][A2CLOUD]
+* A2CLOUD home
 * [Apple II Extravaganza][]
 * [Raspberry Pi Party][]
 * [love and hate mail: ivan@ivanx.com][ivanx]
 
 [A2CLOUD]: index.html "A2CLOUD"
-[Apple II Extravaganza]: [http://appleii.ivanx.com/
-[Raspberry Pi Party]: http://ivanx.com/raspberrypi
+[Apple II Extravaganza]: http://appleii.ivanx.com/
+[Raspberry Pi Party]: http://ivanx.com/raspberrypi/
 [ivanx]: mailto:ivan@ivanx.com "Contact Ivan Drucker"
 </header>
 
 <nav markdown="1">
 ## A2CLOUD Table of Contents
 
-* [A2CLOUD: intro](#intro)
-* [A2CLOUD: what you need](#what-you-need)
-* [A2CLOUD: prepare your Pi](#prepare-your-pi)
-* [A2CLOUD: go headless (optional)](#go-headless-optional)
-* [A2CLOUD: install the software](#install-the-software)
-* [A2CLOUD: attach your cables](#attach-your-cables)
-* [A2CLOUD: make your boot disk](#make-your-boot-disk)
-* [A2CLOUD: use virtual drives!](#use-virtual-drives)
-* [A2CLOUD: log in from your Apple II](#log-in-from-your-apple-ii)
-* [A2CLOUD: make a floppy or image](#make-a-floppy-or-image)
-* [A2CLOUD: learn some Unix](#learn-some-unix)
-* [A2CLOUD: “insert” a disk image](#insert-a-disk-image)
-* [A2CLOUD: connect with other people](#connect-with-other-people)
-* [A2CLOUD: browse &amp; download](#browse-amp-download)
-* [A2CLOUD: use disk images](#use-disk-images)
-* [A2CLOUD: expand archives](#expand-archives)
-* [A2CLOUD: transfer files](#transfer-files)
-* [A2CLOUD: increase serial port speed](#increase-serial-port-speed)
-* [A2CLOUD: emulate an Apple II](#emulate-an-apple-ii)
-* [A2CLOUD: Apple II Pi](#apple-ii-pi)
-* [A2CLOUD: release history and notes](#release-history-and-notes)
-* [A2CLOUD: other stuff](#other-stuff)
+* [intro](#intro)
+* [what you need](#what-you-need)
+* [prepare your Pi](#prepare-your-pi)
+* [go headless (optional)](#go-headless-optional)
+* [install the software](#install-the-software)
+* [attach your cables](#attach-your-cables)
+* [make your boot disk](#make-your-boot-disk)
+* [use virtual drives!](#use-virtual-drives)
+* [log in from your Apple II](#log-in-from-your-apple-ii)
+* [make a floppy or image](#make-a-floppy-or-image)
+* [learn some Unix](#learn-some-unix)
+* [“insert” a disk image](#insert-a-disk-image)
+* [connect with other people](#connect-with-other-people)
+* [browse &amp; download](#browse-amp-download)
+* [use disk images](#use-disk-images)
+* [expand archives](#expand-archives)
+* [transfer files](#transfer-files)
+* [increase serial port speed](#increase-serial-port-speed)
+* [emulate an Apple II](#emulate-an-apple-ii)
+* [Apple II Pi](#apple-ii-pi)
+* [release history and notes](#release-history-and-notes)
+* [other stuff](#other-stuff)
 </nav>
 <!--
 It's possible with jQuery to make the above <nav> not scroll off the screen by
@@ -57,87 +57,95 @@ to this page, else wait for re-worked website.  -TJC, 2015.12.24
 -->
 
 <section markdown="1" id="content">
-## A2CLOUD: intro
-{: #intro }
+## intro
 
 Hello, and welcome to A2CLOUD! It provides any Apple II — even a IIc — with
 internet access, mass storage, and floppy disk transfer, via a [Raspberry
-Pi][24], a tiny silent $35 computer. You can also use A2CLOUD with other Linux
-computers or virtual machines; [click here][25] for details.
+Pi][], a tiny silent $35 computer. You can also use A2CLOUD with other Linux
+computers or virtual machines; [click here](#a2cloud-on-non-pi-computers) for details.
 
 This web page is the user guide; just read the posts in order. The table of
 contents is over on the right. You might want to start with the intro video
 below. (For other ways to use your Raspberry Pi with your Apple II, check
-out [A2SERVER][26], and [Apple II Pi][27], both part of [Raspple II][28].)
+out [A2SERVER][], and [Apple II Pi][], both part of [Raspple II][].)
 
 *5-May-15: A2CLOUD 1.8.1 is available, featuring compatibility with every
 Raspberry Pi including Raspberry Pi 2 Model B and Raspberry Pi 1 Model A+, and
 non-Pi users now get the GSport emulator. If you already have A2CLOUD
 installed, type `a2cloud-update` to update, or start over with the [Raspple
-II][28] easy installation method (or upgrade Raspple II with `a2cloud-update
+II][] easy installation method (or upgrade Raspple II with `a2cloud-update
 os`). The complete version history is [here](#release-history-and-notes).*
 
+<!--
 [![YouTube: A2CLOUD setup part 1: intro and demo][v_img01]][video01]
 
 [v_img01]: http://img.youtube.com/vi/kYkOxe4mjHg/0.jpg
 [video01]: http://www.youtube.com/watch?v=kYkOxe4mjHg
+-->
+<iframe src="http://www.youtube.com/embed/kYkOxe4mjHg" width="480" height="360" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 
 ##### This entry was posted on July 14, 2013 by [ivanx][]
+[Raspberry Pi]: http://www.raspberrypi.org/ "Raspberry Pi"
+[A2SERVER]: ../a2server/index.html "A2SERVER"
+[Apple II Pi]: http://schmenk.is-a-geek.com/wordpress/ "Apple II Pi"
+[Raspple II]: ../rasppleii/index.html "Raspple II"
 
 * * *
 
-## A2CLOUD: what you need
-{: #what-you-need }
+## what you need
 
 To use A2CLOUD, you need various things. Here’s a video to show you what
 goes where, followed by your shopping list. (Don’t pay much attention to
 2:00 through 6:00, as it’s now much simpler to set up A2CLOUD than when
 I made the video.)
 
+<!--
 [![YouTube: A2CLOUD setup part 2: configure your Raspberry Pi][v_img02]][video02]
 
 [v_img02]: http://img.youtube.com/vi/saIdvQNgm3c/0.jpg
 [video02]: http://www.youtube.com/watch?v=saIdvQNgm3c
+-->
+<iframe src="http://www.youtube.com/embed/saIdvQNgm3c" width="480" height="360" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 
 
 Places to purchase are linked:
 
 * for virtual drives, any Apple II model with Applesoft
 * for internet, an Apple IIc, IIgs, or 128K Apple IIe enhanced (though Apple
-  II Plus and unenhanced IIe [might work][30])
+  II Plus and unenhanced IIe [might work](#apple-ii-plus-and-unenhanced-iie))
 * any Raspberry Pi, B/B+ models recommended
-  ([buy direct from distributor][31], or at Amazon: [Pi 2 model B][32],
-  [Pi 1 model B+][33], [Pi 1 model B][34], [Pi 1 model A+][35])
-* a [4 GB or larger SD card][36] ([8 GB or larger][37] recommended)
-* a [good power supply][38] with a micro-USB plug that provides at least 1A of
+  ([buy direct from distributor][rpi-products], or at Amazon: [Pi 2 model B][az-pi2],
+  [Pi 1 model B+][az-piB+], [Pi 1 model B][az-piB], [Pi 1 model A+][az-piA+])
+* a [4 GB or larger SD card][az-4gSD] ([8 GB or larger][az-8gSD] recommended)
+* a [good power supply][az-USBpwr] with a micro-USB plug that provides at least 1A of
   current
-* an [ethernet cable][39] attached to your router, or a
-  [Wi-Fi adapter][40] (more complex)
-* a [null modem Apple II serial cable][41] (or: [roll your own][42])
-* a [USB-to-serial adapter][43]
-* a [Super Serial Card][44], if you have an Apple IIe (see note below)
+* an [ethernet cable][az-netCable] attached to your router, or a
+  [Wi-Fi adapter][ivanx-rpiWifi] (more complex)
+* a [null modem Apple II serial cable][RetroFloppy products] (or: [roll your own][serial - ADTPro])
+* a [USB-to-serial adapter][az-USBserial]
+* a [Super Serial Card][eb-SSC], if you have an Apple IIe (see note below)
 
 If you want simultaneous virtual drives and internet access from your
 Apple II:
 
-* another [null modem Apple II serial cable][41] (or: [roll your own][42])
-* another [USB-to-serial adapter][43]
-* another [Super Serial Card][44], if you have an Apple IIe (see note below)
+* another [null modem Apple II serial cable][RetroFloppy products] (or: [roll your own][serial - ADTPro])
+* another [USB-to-serial adapter][az-USBserial]
+* another [Super Serial Card][eb-SSC], if you have an Apple IIe (see note below)
 
 Optional items:
 
-* an [SD card reader][45] to prepare the SD card, if your computer doesn’t
+* an [SD card reader][az-SDreader] to prepare the SD card, if your computer doesn’t
   have one
-* a [USB keyboard][46] and possibly [mouse][47] (or: you can
+* a [USB keyboard][az-keyboard] and possibly [mouse][az-mouse] (or: you can
   [control the Pi from another computer](#go-headless-optional))
-* a [*powered* USB hub][48] (if you don’t have a free port for a USB-to-serial
+* a [*powered* USB hub][az-USBhub] (if you don’t have a free port for a USB-to-serial
   adapter)
-* an [Apple II Pi card][49], or another [Super Serial Card][44] with a
-  [Raspberry Pi Console cable][50], if you want to use [Apple II Pi](#apple-ii-pi)
+* an [Apple II Pi card][UA2], or another [Super Serial Card][eb-SSC] with a
+  [Raspberry Pi Console cable][lvttl-rs232-cable], if you want to use [Apple II Pi](#apple-ii-pi)
 
 If you have a straight-through serial cable rather than a null modem serial
 cable, and you are using a IIgs or IIc (no Super Serial Card), you can use a
-[DE-9 (aka DB-9) male-to-female null modem adapter][51].
+[DE-9 (aka DB-9) male-to-female null modem adapter][az-de9nullMF].
 
 If you have a Super Serial Card, its jumper block needs to point towards
 “Modem” if you have a null modem cable, or “Terminal” if you have a
@@ -152,16 +160,36 @@ models based on other chipsets such as FTDI may also work; I just haven’t
 tried them.)
 
 ##### This entry was posted on July 14, 2013 by [ivanx][].
+[rpi-products]: http://www.raspberrypi.org/products/ "Raspberry Pi purchase"
+[az-pi2]: http://amazon.com/dp/B00T2U7R7I?tag=ivane-20 "Raspberry Pi 2 Model B - Amazon"
+[az-piB+]: http://amazon.com/dp/B00LPESRUK?tag=ivane-20 "Raspberry Pi 1 model B+ - Amazon"
+[az-piB]: http://amazon.com/dp/B009SQQF9C?tag=ivane-20 "Raspberry Pi 1 model B - Amazon"
+[az-piA+]: http://amazon.com/dp/B00PEX05TO?tag=ivane-20 "Raspberry Pi 1 model A+ - Amazon"
+[az-4gSD]: http://amazon.com/s?url=search-alias%3Delectronics&field-keywords=4GB+SD+card&tag=ivane-20 "4GB SD card - Amazon"
+[az-8gSD]: http://amazon.com/s?url=search-alias%3Delectronics&field-keywords=8GB+SD+card&tag=ivane-20 "8GB SD card - Amazon"
+[az-USBpwr]: http://amazon.com/dp/B00A9PO5AM?tag=ivane-20 "5V 2A Micro USB Travel Charger - Amazon"
+[az-netCable]: http://amazon.com/s?url=search-alias%3Dcomputers&field-keywords=ethernet+cable&tag=ivane-20 "Ethernet cable - Amazon"
+[ivanx-rpiWifi]: http://ivanx.com/raspberrypi/raspberrypi_wifi.html "Raspberry Pi WiFi"
+[RetroFloppy products]: http://retrofloppy.com/products.html "Apple II null modem serial cable"
+[serial - ADTPro]: http://adtpro.sourceforge.net/connectionsserial.html "ADTPro serial connections"
+[az-USBserial]: http://amazon.com/dp/B0007T27H8?tag=ivane-20 "TRENDnet TU-S9 USB-to-serial adapter - Amazon"
+[eb-SSC]: http://www.ebay.com/sch/i.html?_nkw=apple+super+serial+card "eBay - Apple Super Serial Card"
+[az-SDreader]: http://amazon.com/dp/B006T9B6R2?tag=ivane-20 "SD card reader"
+[az-keyboard]: http://amazon.com/s?url=search-alias%3Delectronics&field-keywords=USB+keyboard&tag=ivane-20 "USB keyboard - Amazon"
+[az-mouse]: http://amazon.com/s?url=search-alias%3Delectronics&field-keywords=USB+mouse&tag=ivane-20 "USB mouse - Amazon"
+[az-USBhub]: http://amazon.com/s?url=search-alias%3Delectronics&field-keywords=Powered+USB+hub&tag=ivane-20 "Powered USB hub - Amazon"
+[UA2]: http://ultimateapple2.com/ "Apple II Pi card from Ultimate Apple 2"
+[lvttl-rs232-cable]: http://www.pridopia.co.uk/pi-232r1-db9.html "Raspberry Pi console cable"
+[az-de9nullMF]: http://amazon.com/s?url=search-alias%3Delectronics&field-keywords=DB9+male+female+null+modem+adapter+-usb&tag=ivane-20 "DE-9 male-to-female null modem adapters - Amazon"
 
 * * *
 
-## A2CLOUD: prepare your Pi
-{: #prepare-your-pi }
+## prepare your Pi
 
 ### Starting Fresh
 
 If you have never used your Pi, you will need to prepare your SD card.
-Download [Raspple II][28] (a distribution of the Raspbian operating system
+Download [Raspple II][] (a distribution of the Raspbian operating system
 with Apple II goodies preinstalled), and expand the .zip file. Copy all of its
 files to a 4 GB or larger SD card (8 GB or larger recommended). Then put the
 SD card in your Pi, and attach power. The operating system will automatically
@@ -170,9 +198,8 @@ to your Pi, you’ll know when it’s done when the ACT/OK lamp on the Raspberry
 Pi board stops flickering.
 
 (If you are starting over with the same SD card, or want to ensure the card is
-formatted correctly, you can use the official [SD Formatter][52]  utility —
+formatted correctly, you can use the official [SD Formatter][] utility —
 carefully! — before copying the files.)  
-{: .space-after }
 
 ### If you’re already up and running, or want to customize the installation
 
@@ -185,13 +212,12 @@ wget appleii.ivanx.com/a2cloud/setup; source setup
 If you want all the features, answer “Y” to the questions. Then be patient, as
 it takes a little while to install.
 
-
 ##### This entry was posted on July 14, 2013 by [ivanx][].
+[SD Formatter]: https://www.sdcard.org/downloads/formatter_4/
 
 * * *
 
-## A2CLOUD: go headless (optional)
-{: #go-headless-optional }
+## go headless (optional)
 
 For basic A2CLOUD use, I recommend going headless with your Raspberry Pi —
 that is, using it without a screen and keyboard. This will keep your USB ports
@@ -203,7 +229,6 @@ line from your Apple II.
 With that said, you may want a screen and keyboard attached if you want to use
 [Apple II Pi](#apple-ii-pi), or you just feel more comfortable using it that way. So if
 you’re not ready to go headless, you can skip the rest of this post.
-{: .space-after }
 
 ### Log in to the Pi’s command line:
 
@@ -214,29 +239,27 @@ network.
 
 On a Mac, open Terminal (in the Utilities folder of the Applications folder),
 and at the prompt, type `ssh pi@raspberrypi.local` to connect. If you have
-Windows, you can install [Bonjour Print Services][53], and then use
-[PuTTY][54] to connect to the address “raspberrypi.local”.
+Windows, you can install [Bonjour Print Services][], and then use
+[PuTTY][] to connect to the address “raspberrypi.local”.
 
 If that doesn’t work, try updating A2CLOUD by typing `a2cloud-setup`. If it
 still doesn’t work, or you don’t want to install Bonjour Print Services for
 Windows, you will need to find your Pi’s IP address and use that instead. If
-you have a Mac, you can use [Pi Finder][55] to help with this; if you have
-Windows, you can use [Advanced IP Scanner][56].
+you have a Mac, you can use [Pi Finder][] to help with this; if you have
+Windows, you can use [Advanced IP Scanner][].
 
 The username is “pi” and the password is “apple2″ (or instead “raspberry” if
 you installed a fresh copy of Raspbian, rather than Raspple II). You should
 arrive at the Linux prompt.
-{: .space-after }
 
 ### Remotely Access the Raspbian desktop
 
 You can access the Raspbian graphical desktop by using remote desktop
 software. Use the Remote Desktop Connection application included with
-Microsoft Windows, or its [Mac version][57], to connect to your Raspberry Pi
+Microsoft Windows, or its [Mac version][RDPMac], to connect to your Raspberry Pi
 by putting in “raspberrypi.local”, or your Pi’s IP address. (If you would
-prefer to use a VNC client, [configure tightvncserver][58]. You could also use
+prefer to use a VNC client, [configure tightvncserver][RPiTightVNC]. You could also use
 RDP or VNC clients for other platforms, like iOS and Android.)
-{: .space-after }
 
 ### Get a consistent IP Address
 
@@ -257,17 +280,22 @@ manual, or Google for it.
 
 If your router can’t provide a DHCP reservation, you can alternatively
 configure your Pi to have a static IP address (which is permanently set,
-rather than asking your router for it) via the method discussed [here][59].
-
+rather than asking your router for it) via the method discussed [here][RPiStaticIP].
 
 ##### This entry was posted on July 14, 2013 by [ivanx][].
+[Bonjour Print Services]: http://support.apple.com/kb/dl999
+[PuTTY]: http://www.chiark.greenend.org.uk/~sgtatham/putty/
+[Pi Finder]: http://ivanx.com/raspberrypi/files/PiFinder.zip
+[Advanced IP Scanner]: http://www.advanced-ip-scanner.com/
+[RDPMac]: https://itunes.apple.com/us/app/microsoft-remote-desktop/id715768417?mt=12 "Microsoft Remote Desktop for Mac"
+[RPiTightVNC]: http://elinux.org/RPi_VNC_Server "configure TightVNCServer"
+[RPiStaticIP]: http://elinux.org/Configuring_a_Static_IP_address_on_your_Raspberry_Pi "Raspberry Pi static IP address"
 
 * * *
 
-## A2CLOUD: install the software
-{: #install-the-software }
+## install the software
 
-If you used the [Raspple II][28] installation method, you’ve already installed
+If you used the [Raspple II][] installation method, you’ve already installed
 the A2CLOUD software, and can skip the rest of this post.
 
 If you don’t have A2CLOUD installed yet — because, for example, you installed
@@ -296,13 +324,11 @@ log in.)
 You’ve now got your Raspberry Pi providing virtual drives and internet access
 for your Apple II!
 
-
 ##### This entry was posted on July 14, 2013 by [ivanx][].
 
 * * *
 
-## A2CLOUD: attach your cables
-{: #attach-your-cables }
+## attach your cables
 
 Figure out which of the following scenarios applies to you, and attach your
 USB-to-serial adapter(s) according to the options you see.
@@ -326,7 +352,6 @@ these instructions refers to that card, and “printer port” is unavailable. I
 you have two Super Serial Cards, then the order is the reverse of what you
 might expect; “modem port” refers to slot 1, while “printer port” refers to
 slot 2. (Thanks to David Laffineuse for this report.)
-{: .space-after }
 
 ### You have one USB-to-serial adapter, and want to use it for virtual drives
 
@@ -338,7 +363,6 @@ You can use:
 * the lowest-numbered port on a hub with multiple USB-to-serial adapters
 
 Connect the adapter to a serial cable attached to to your Apple II modem port.
-{: .space-after }
 
 ### You have one USB-to-serial adapter, and want to use it for internet
 
@@ -351,12 +375,10 @@ You can use:
 
 Connect the adapter to a serial cable attached to to your Apple II printer
 port.
-{: .space-after }
 
 ### You have two USB-to-serial adapters
 
 Do both of the above.
-{: .space-after }
 
 ### How to figure out the lowest or highest numbered port on your USB hub
 
@@ -377,11 +399,10 @@ which one is the highest.
 
 * * *
 
-## A2CLOUD: make your boot disk
-{: #make-your-boot-disk }
+## make your boot disk
 
 You’re almost ready to use virtual drives, courtesy of David Schmidt’s
-[VSDRIVE][60], which is included with [ADTPro][61]. You can also use ADTPro
+[VSDRIVE][], which is included with [ADTPro][]. You can also use ADTPro
 itself to transfer disk images to actual disks, and vice versa.
 
 To access the virtual drives, you need to boot from the A2CLOUD disk. To get
@@ -389,18 +410,20 @@ that, you need ADTPro to transfer it to an Apple II floppy. If you’ve already
 got ADTPro on an Apple II disk, boot it (choose Serial if prompted), and skip
 the video and the paragraph which follows it. Or, if you’ve got some other
 means of turning disk image files into floppies, you can download the
-[140K A2CLOUD boot disk][62] or the [800K A2CLOUD boot disk][63], and skip the
+[140K A2CLOUD boot disk][A2CLOUD 140k] or the [800K A2CLOUD boot disk][A2CLOUD 800k], and skip the
 rest of this post.
 
 If you don’t have ADTPro on an Apple II disk already, you need to get it
 running on your Apple II via a process called bootstrapping. Here’s a video to
 show you how to do that, or you can read the instructions below it.
 
+<!--
 [![YouTube: A2CLOUD setup part 3: making your boot floppy][v_img03]][video03]
 
 [v_img03]: http://img.youtube.com/vi/iOKIQNF8sZY/0.jpg
 [video03]: http://www.youtube.com/watch?v=iOKIQNF8sZY
-
+-->
+<iframe src="http://www.youtube.com/embed/iOKIQNF8sZY" width="480" height="360" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 
 First, turn on your Apple II and press ctrl-RESET before DOS or ProDOS can
 load. Next, if you have a screen, keyboard, and mouse attached to your Pi,
@@ -429,13 +452,15 @@ running; you can type `adtpro-start` at a prompt to get it going again, or
 reboot, or disconnect and then reconnect the USB-to-serial adapter on the
 lower USB port.
 
-
 ##### This entry was posted on July 14, 2013 by [ivanx][].
+[VSDRIVE]: http://adtpro.sourceforge.net/vdrive.html "VSDRIVE"
+[ADTPro]: http://adtpro.sourceforge.net/ "ADTPro"
+[A2CLOUD 140k]: http://appleii.ivanx.com/a2cloud/files/A2CLOUD.DSK "140K A2CLOUD boot disk"
+[A2CLOUD 800k]: http://appleii.ivanx.com/a2cloud/files/A2CLOUD.HDV "800K A2CLOUD boot disk"
 
 * * *
 
-## A2CLOUD: use virtual drives!
-{: #use-virtual-drives }
+## use virtual drives!
 
 Ok, almost there. Fire up your A2CLOUD floppy, and at the welcome screen, type
 V. (If you are at an Applesoft prompt, you can instead type `-VSDRIVE`.)
@@ -443,8 +468,8 @@ V. (If you are at an Applesoft prompt, you can instead type `-VSDRIVE`.)
 Once you’ve done this, you can access your blank virtual disk on slot 2 drive
 1, and the 800K version of the A2CLOUD disk on slot 2 drive 2.  Check it out
 by typing `CAT,S2,D2`. After specifying the slot and drive, they will stick
-for subsequent [ProDOS commands][64] (that’s a quick list; here’s a
-[full manual][65]). You will no longer have access to slot 6. To regain
+for subsequent [ProDOS commands][DOS/ProDOS cmds] (that’s a quick list; here’s a
+[full manual][BASIC w/ ProDOS]). You will no longer have access to slot 6. To regain
 access to slot 6, do a full reset of your Apple II and boot any ProDOS disk as
 usual.
 
@@ -476,13 +501,13 @@ use with VSDRIVE, or experiment with other copy programs.
 You can also change the virtual drives to use different images, which I’ll
 explain in a later post.
 
-
 ##### This entry was posted on July 14, 2013 by [ivanx][].
+[DOS/ProDOS cmds]: http://apple2.info/wiki/index.php?title=DOS#Commands_quick_reference "ProDOS and DOS 3.3 commands"
+[BASIC w/ ProDOS]: http://www.apple2scans.net/?p=33 "BASIC Programming with ProDOS"
 
 * * *
 
-## A2CLOUD: log in from your Apple II
-{: #log-in-from-your-apple-ii }
+## log in from your Apple II
 
 If you’re happy enough controlling your Pi with a screen or keyboard attached,
 or by logging into it from another computer, then you don’t really need to
@@ -490,9 +515,9 @@ read any of this post. But it’s *more fun* to log into it from your Apple II.
 You try it.
 
 To do that, you’ll need terminal communications software which supports VT-100
-emulation. The A2CLOUD installer provides both [ProTERM][66] and Z-Link for
+emulation. The A2CLOUD installer provides both [ProTERM][] and Z-Link for
 IIc, IIgs, and enhanced IIe; GS/OS users can also download and use
-[Spectrum][67] for color and graphic text. Apple II Plus and unenhanced IIe
+[Spectrum][] for color and graphic text. Apple II Plus and unenhanced IIe
 users have some options too.
 
 Once you’ve connected with your terminal program — specifics are below — press
@@ -515,8 +540,7 @@ to the next screen by typing ctrl-A followed by N.   To close a screen,
 type `exit` or ctrl-A followed by K. When you close the last screen, Screen
 quits. All Screen commands start with ctrl-A; for a full list of commands,
 type ctrl-A followed by a question mark. A well-written, easy-to-follow guide
-on how to get the most out of Screen is [here][68].
-{: .space-after }
+on how to get the most out of Screen is [here][using Screen].
 
 ### ProTERM
 
@@ -532,12 +556,11 @@ you’re ready to connect, choose Parameters from the Online menu, choose 4800
 baud and VT-100 emulation, hide the status bar, and select Line Status:
 Online. (Thanks to Tony Diaz and Intrec Software for making ProTERM free to
 the community.)
-{: .space-after }
 
 ### Spectrum
 
-[Spectrum][67], for the Apple IIgs, is not provided on the A2CLOUD disk,
-[but is freely available for download][69]. From the Settings menu, choose
+[Spectrum][], for the Apple IIgs, is not provided on the A2CLOUD disk,
+[but is freely available for download][Spectrum DL]. From the Settings menu, choose
 Port and select the printer port at 4800 baud. Then in the Settings menu,
 choose Online Display and select VT-100 (monochrome text), or ANSI (color and
 graphic text, though slower). Then from the Show menu, choose Online Display.
@@ -546,7 +569,6 @@ if you don’t want to do it every time. You can also type `term mono` if you
 want to switch it back for use with other terminal programs. When you’re done,
 type Apple-W to “close” the display. (Thanks to Ewen Wannop for making
 Spectrum free to the community.)
-{: .space-after }
 
 ### Z-Link
 
@@ -565,33 +587,36 @@ your A2CLOUD disk and set it up as above. Then, at the Applesoft prompt,
 type `-VSDRIVE.LOW` followed by `-FILER`. Once in Filer, rename the volume of
 your A2CLOUD floppy to A2CLOUD.DISK, then copy /A2CLOUD.DISK/Z.LINK.CONFIG to
 /A2CLOUD/Z.LINK.CONFIG.
-{: .space-after }
 
 ### Apple II Plus and unenhanced IIe
 
 If you have an Apple II Plus or unehnanced IIe, there have been reports
-of success with using [Kermit 3.87][70], or DCOM 3.3,
+of success with using [Kermit 3.87][], or DCOM 3.3,
 for terminal access to your Raspberry Pi. They need to be set for VT-100
 emulation, and on an Apple II Plus you need a Videx VideoTerm (but not
 UltraTerm) for 80 column support. I haven’t tried them, but [here’s the
-relevant discussion thread][71].
-
+relevant discussion thread][csa2 unenh-vt100].
 
 ##### This entry was posted on July 14, 2013 by [ivanx][].
+[ProTERM]: http://lostclassics.apple2.info/announcements/19/proterm-a2/ "ProTERM"
+[Spectrum]: http://www.wannop.info/speccie/Site/Speccies_Home_Pages.html "Spectrum for Apple IIgs"
+[using Screen]: https://blog.bartbania.com/raspberry_pi/linux-screen/ "using Screen"
+[Spectrum DL]: http://www.wannop.info/speccie/Site/Download_Centre.html "Spectrum download"
+[Kermit 3.87]: http://macgui.com/downloads/?file_id=24237 "Mac GUI Vault: Kermit 3.87"
+[csa2 unenh-vt100]: https://groups.google.com/d/msg/comp.sys.apple2/8yUpfbAgdx0/oVwep6fMsTYJ "VT-100 on Apple II Plus and unenhanced IIe"
 
 * * *
 
-## A2CLOUD: make a floppy or image
-{: #make-a-floppy-or-image }
+## make a floppy or image
 
-If you have [A2SERVER][26] installed — which you do if you installed A2CLOUD
-with [Raspple II][28] — it’s easy to download software with your modern
+If you have [A2SERVER][] installed — which you do if you installed A2CLOUD
+with [Raspple II][] — it’s easy to download software with your modern
 computer and turn it into a floppy disk with your Apple II, or use it as a
 virtual drive. And it’s just as easy to make an image from an Apple II floppy
 that you can use in an emulator on your modern computer.
 
 (If you don’t have A2SERVER installed, you can start over with
-[Raspple II][28], or you can, at your Raspberry Pi’s prompt, type `wget
+[Raspple II][], or you can, at your Raspberry Pi’s prompt, type `wget
 ivanx.com/a2server/setup; source setup` to install it. If you’re not sure,
 type `a2server-help`; if you get a help screen, you’ve got A2SERVER.)
 
@@ -614,7 +639,7 @@ following `\\` in an Explorer window.)
 Open the ADTDISKS shared volume and copy any disk images you want to make into
 disks in there.
 
-Then run [ADTPro][61] on your Apple II, which is on your A2CLOUD boot disk.
+Then run [ADTPro][] on your Apple II, which is on your A2CLOUD boot disk.
 Type R to receive, and type the name of the image file (case matters), and
 then choose the drive containing the disk you want to put the image onto. The
 disk will be erased, so be careful.  Also, if you were using VSDRIVE before
@@ -631,15 +656,13 @@ ADTDISKS network volume on your newer computer.
 
 Unix-type computers can also use `scp` to copy files to and from A2SERVER;
 Windows computers can also do so in the command window by using `pscp`
-in [PuTTY][54]. The shared volume is at /media/A2SHARED/ADTDISKS.
-
+in [PuTTY][]. The shared volume is at /media/A2SHARED/ADTDISKS.
 
 ##### This entry was posted on July 14, 2013 by [ivanx][].
 
 * * *
 
-## A2CLOUD: learn some Unix
-{: #learn-some-unix }
+## learn some Unix
 
 Once you’re logged into your Raspberry Pi, you can download disk images and
 use them with VSDRIVE or transfer them with ADTPro.
@@ -711,13 +734,11 @@ This is just the tip of the iceberg. There are lots and lots of Unix commands
 for every purpose imaginable. If you think there are others which should be
 included here, please mention them in the comments.
 
-
 ##### This entry was posted on July 15, 2013 by [ivanx][].
 
 * * *
 
-## A2CLOUD: “insert” a disk image
-{: #insert-a-disk-image }
+## “insert” a disk image
 
 To make things easy, A2CLOUD has commands to “insert” disk image files into
 the virtual drives:
@@ -755,13 +776,11 @@ Windows shortcut or Mac alias, to whatever file you specify as imageFileName.
 The symlinks are in /usr/local/adtpro/disks, and are called Virtual.po or
 Virtual2.po, respectively.)
 
-
 ##### This entry was posted on August 11, 2013 by [ivanx][].
 
 * * *
 
-## A2CLOUD: connect with other people
-{: #connect-with-other-people }
+## connect with other people
 
 Once you’ve logged into your Pi — that could be from your Apple II using
 ProTERM or Z-Link or Spectrum, or with a directly attached keyboard and
@@ -771,7 +790,6 @@ internet.
 Unless you’re using ProTERM or Spectrum on an Apple IIgs, *remember to hold
 down solidApple when pressing the arrow keys* when you’re using these
 programs.
-{: .space-after }
 
 ### IRC (Internet Relay Chat)
 
@@ -779,9 +797,8 @@ If you want to chat live with other Apple II people, all you need to do is
 type `a2chat`. It will launch an IRC program called Irssi and connect you
 directly to the #a2c.chat channel. (If you want to connect to other channels,
 instead type `irssi`.) Type `/quit` when you’re done. You might want to check
-out more detailed instructions for [IRC generally][72] or
-[Irssi specifically][73].
-{: .space-after }
+out more detailed instructions for [IRC generally][IRC Help] or
+[Irssi specifically][irssi docs].
 
 ### Usenet newsgroups (discussion boards)
 
@@ -791,7 +808,6 @@ will be subscribed to only the Apple II newsgroups by default; to access all
 the other ones, type Y (for “yank”) and subscribe to the ones you like. (If
 you have a preferred NNTP server you would like to use, you can set it by
 typing `a2news -s your.server.address`.)
-{: .space-after }
 
 ### Twitter
 
@@ -799,31 +815,31 @@ You can indeed tweet from your Apple II, if you can believe it. Type `ttytter`
 and follow the instructions. For initial setup, you’ll need to sign in to your
 Twitter account from a web browser, which, if you don’t want to leave your
 Apple II, could be Lynx, as I will explain in the next post.  If you need
-help, an [extensive manual][74] is available for TTYtter. You can also try
+help, an [extensive manual][TTYtter] is available for TTYtter. You can also try
 starting it by typing `ttytter -readline` for enhanced input, though it is
 beta and may have problems.
-{: .space-after }
 
 ### Email
 
 There are email programs you can use, but they can be challenging to set up,
 so they have not formally been made a part of A2CLOUD for the moment. If you
-want to give it a go, [see this comment][75] to get started, and look for help
+want to give it a go, [see this comment](#email-on-a2cloud) to get started, and look for help
 on Linux forums if you need it.
 
-
 ##### This entry was posted on August 11, 2013 by [ivanx][].
+[IRC Help]: http://www.irchelp.org/ "IRC Help"
+[irssi docs]: http://www.irssi.org/documentation/ "Irssi Documentation"
+[TTYtter]: http://www.floodgap.com/software/ttytter/ "TTYtter"
 
 * * *
 
-## A2CLOUD: browse &amp; download
-{: #browse-amp-download }
+## browse &amp; download
 
 If you want to get new Apple II software, there are a few ways to go about it.
 
 You could try a desktop browser on the Pi, such as the included Epiphany
 (a.k.a. Web), Midori, or Netsurf, or install an alternative such as
-[Chromium][76], the open-source cousin of Google Chrome, or [Iceweasel][77],
+[Chromium][RPi_Chromium], the open-source cousin of Google Chrome, or [Iceweasel][RPi_IceWeasel],
 which is a rebranded Firefox.
 
 You can also download with a modern computer, and [copy to your Pi over your
@@ -844,7 +860,7 @@ programs.
 `lynx`\: a text-only web browser which can access simply laid out sites.
 Examples: `lynx ivanx.com`, or a download site, like `lynx
 mirrors.apple2.org.za`. ProTERM and Spectrum work better for lynx than Z-Link
-does. (You can also try out [alternative text-only web browsers][78].)
+does. (You can also try out [alternative text-only web browsers](#alternative-text-only-web-browsers).)
 
 `links`\: another text-only web browser you might, or might not, prefer to
 Lynx. If you see only a black screen when you start it, press the ESC key to
@@ -868,13 +884,13 @@ directoryPath`. You can see all commands by typing `help`.
 in a single command, e.g: `wget
 http://appleii.ivanx.com/slammer/files/SLAMMER111P.DSK`
 
-
 ##### This entry was posted on August 11, 2013 by [ivanx][].
+[RPi_Chromium]: http://elinux.org/RPi_Chromium "Chromium (Google Chrome for Raspberry Pi)"
+[RPi_IceWeasel]: http://elinux.org/RPi_IceWeasel "Iceweasel (Firefox for Raspbian)"
 
 * * *
 
-## A2CLOUD: use disk images
-{: #use-disk-images }
+## use disk images
 
 Once you’ve [downloaded stuff to your Pi](#browse-amp-download), or [copied stuff on to it from
 another computer on your network](#make-a-floppy-or-image), you can [immediately use the `vsd1` or
@@ -905,7 +921,6 @@ You can also use `vsd1` or `vsd2` for non-ProDOS disks, but you won’t be a
 to access them from within ProDOS. However, you can use a ProDOS utility which
 knows how to access the format (e.g. System Utilities can copy files from DOS
 3.3 and Pascal disks).
-{: .space-after }
 
 ### Some commands for working with Apple II disk images:
 
@@ -929,13 +944,11 @@ alternative, but it’s even slower. It does preserve dates, however.)
 `$VSD1` and `$VSD2` can be used in commands to refer to the disk images
 assigned to virtual drives 1 and 2, rather than typing out the full path.
 
-
 ##### This entry was posted on August 11, 2013 by [ivanx][].
 
 * * *
 
-## A2CLOUD: expand archives
-{: #expand-archives }
+## expand archives
 
 If you have an archive file, on your Pi, you’ll need to expand it.
 {: .space-after }
@@ -953,7 +966,7 @@ Commands for general archive formats:
 
 `unar archiveFileName` will extract files from tons of archive formats,
 including obsolete ones like StuffIt and DiskDoubler. See [The
-Unarchiver][79] for a full list.
+Unarchiver][unar formats] for a full list.
 {: .space-after }
 
 Commands for Apple II archive formats:
@@ -992,17 +1005,15 @@ and `usq filename` will uncompress Squeezed files. `unbit filename >
 outfilename` will decode an EXEC file made by Executioner; `unexec filename >
 outfilename` will decode an EXEC file containing monitor input.
 
-
 ##### This entry was posted on August 11, 2013 by [ivanx][].
+[unar formats]: http://unarchiver.c3.cx/formats "The Unarchiver supported formats"
 
 * * *
 
-## A2CLOUD: transfer files
-{: #transfer-files }
+## transfer files
 
 If you’ve got files on your Pi that aren’t inside one of your viritual disks,
 and you want to transfer them to your Apple II, you’ve got a few options.
-{: .space-after }
 
 ### Archive files:
 
@@ -1010,7 +1021,6 @@ If it’s an archive file, you can (and perhaps should) expand it directly on
 the Pi, as explained in [A2CLOUD: working with archives and disk images](#expand-archives).
 Otherwise, use one of the cool moves below, and then expand it with ShrinkIt
 or the appropriate program on the Apple II.
-{: .space-after }
 
 ### Copy a file into a disk image
 
@@ -1039,7 +1049,6 @@ exist will be created.
 file type and ProDOS file name are optional, the file name is checked to make
 sure it’s ProDOS-compatible, and any existing file of the same name within the
 image is first deleted.)
-{: .space-after }
 
 ### Transfer a file from your Pi to your Apple II
 
@@ -1062,7 +1071,6 @@ If you are using ProTERM, you can also try ZMODEM by using `sz` instead of
 it can recover from incomplete transfers, but those are less important in a
 direct-attached (rather than dial-up) situation, and I haven’t had as much
 success with it as I have had with YMODEM.
-{: .space-after }
 
 ### Transfer a file from your Apple II to your Pi
 
@@ -1084,13 +1092,11 @@ acmd (AppleCommander) has some smarts, and it can translate (or “export”, as
 it prefers to say) from various Apple II file formats into modern formats. If
 you want it to give that a shot, use `-e` instead of `-g` above.
 
-
 ##### This entry was posted on August 11, 2013 by [ivanx][].
 
 * * *
 
-## A2CLOUD: increase serial port speed
-{: #increase-serial-port-speed }
+## increase serial port speed
 
 I chose the default speed of 4800 baud for Pi as a lowest common
 denominator that should work in almost any situation, even a IIc using
@@ -1116,7 +1122,7 @@ logout, use:
 To see the current speed, just type `baud` by itself.
 
 You’ll only be able to use 38400 or 57600 on a IIgs (and not with Z-Link), but
-Hugh Hood has come up with [clever ProTERM macros][80] that enable 115200
+Hugh Hood has come up with [clever ProTERM macros][csa2 PT-115200] that enable 115200
 baud on any Apple II, and A2CLOUD provides them with ProTERM. If you use
 115200 baud, you’ll likely drop some characters, especially on an 8-bit Apple
 II. One strategy you might want to try is to use a slower speed normally, but
@@ -1134,13 +1140,12 @@ ProTERM starts without having to use the “Read Globals” menu item, delete or
 rename PT3.GLOBALS, and then rename the appropriate globals file to
 PT3.GLOBALS.
 
-
 ##### This entry was posted on August 11, 2013 by [ivanx][].
+[csa2 PT-115200]: https://groups.google.com/forum/#!searchin/comp.sys.apple2/115200$20hugh "Hugh Hood's 115200 baud ProTERM macros"
 
 * * *
 
-## A2CLOUD: emulate an Apple II
-{: #emulate-an-apple-ii }
+## emulate an Apple II
 
 Though the purpose of A2CLOUD is primarily to extend the functionality of your
 actual Apple II, there are also emulators provided in case you want a virtual
@@ -1150,32 +1155,34 @@ point.)
 You’ll either need a screen attached to your Raspberry Pi, or
 [remote desktop software](#go-headless-optional).
 
-For an emulated Apple IIgs, use [GSport][81], a descendent of the KEGS
+For an emulated Apple IIgs, use [GSport][], a descendent of the KEGS
 emulator with significant enhancements by David Schmidt, David Schmenk, Peter
 Neubauer, Christopher Mason, and others.  GSport’s features include Uthernet
 card emulation, AppleTalk networking, and ImageWriter and Epson printer
 emulation. Type `gsport` to if you are at the command prompt and want a
 full-screen experience, or double-click GSport on the Raspbian desktop. Press
 F4 for the configuration screen, and alt-F4 to exit. Usage instructions are on
-the [GSport home page.][81]
+the [GSport home page.][GSport]
 
-For a emulated Apple IIe, type `linapple` to run the [LinApple][82] emulator.
+For a emulated Apple IIe, type `linapple` to run the [LinApple][] emulator.
 It has some nifty features like built-in software downloading and a built-in
-help screen. More information is [here][82].
+help screen. More information is [here][LinApple].
 
-You can also use GSport’s ancestor, [KEGS][83], by choosing it from the menu
+You can also use GSport’s ancestor, [KEGS][], by choosing it from the menu
 of the Raspbian desktop. (To start the Raspbian desktop, type `startx` or use
-[remote desktop software](#go-headless-optional).) Usage instructions are [here][84].
-
+[remote desktop software](#go-headless-optional).) Usage instructions are [here][KEGS instructions].
 
 ##### This entry was posted on November 29, 2013 by [ivanx][].
+[GSport]: http://gsport.sourceforge.net/ "GSport"
+[LinApple]: http://linapple.sourceforge.net/ "LinApple"
+[KEGS]: http://kegs.sourceforge.net/ "KEGS"
+[KEGS instructions]: http://kegs.sourceforge.net/README.kegs.txt "KEGS instructions"
 
 * * *
 
-## A2CLOUD: Apple II Pi
-{: #apple-ii-pi }
+## Apple II Pi
 
-David Schmenk has created [Apple II Pi][27], which takes a different approach
+David Schmenk has created [Apple II Pi][], which takes a different approach
 than A2CLOUD. With A2CLOUD, the idea is to use your Pi as a peripheral for
 your Apple II.
 
@@ -1184,10 +1191,10 @@ joystick, and drives to control your Raspberry Pi, primarily so you can use
 the GSport emulator, giving you a virtual souped up Apple II. To get benefit
 from this, you’ll need a screen attached to your Pi.
 
-To use Apple II Pi, you’ll need the [Apple II Pi card][85], or a [Raspberry
-Pi console cable][50] attached to a Super Serial Card (even in a IIgs) or a
-IIc/IIc+ serial port, via [the appropriate serial cable][41] and possibly a
-[DE-9 (aka DB-9) male-to-male null modem adapter][86]. The software is
+To use Apple II Pi, you’ll need the [Apple II Pi card][UA2], or a [Raspberry
+Pi console cable][lvttl-rs232-cable] attached to a Super Serial Card (even in a IIgs) or a
+IIc/IIc+ serial port, via [the appropriate serial cable][RetroFloppy products] and possibly a
+[DE-9 (aka DB-9) male-to-male null modem adapter][az-de9nullMM]. The software is
 already installed by Raspple II or A2CLOUD (if it doesn’t seem to work, try
 updating A2CLOUD by typing `a2cloud-update`).
 
@@ -1206,45 +1213,40 @@ Pi will fully shut down.
 
 Apple II Pi has many more sophisticated abilities, such being able to develop
 6502 code on the Raspberry Pi and execute it on the Apple II.  For more info
-on how to use it, check out [Dave’s web site][27] and the [Ultimate Apple 2
-forums][86].
-
+on how to use it, check out [Dave’s web site][Apple II Pi] and the [Ultimate Apple 2
+forums][UA2 forum].
 
 ##### This entry was posted on November 29, 2013 by [ivanx][].
+[az-de9nullMM]: http://amazon.com/s?url=search-alias%3DelectronicsDB9+male+null+modem+%adapter+-usb+-female&tag=ivane-20 "DE-9 male-to-male null modem adapter - Amazon"
+[UA2 forum]: https://www.ultimateapple2.com/forums/ "Ultimate Apple 2 forums"
 
 * * *
 
-## A2CLOUD: release history and notes
-{: #release-history-and-notes }
+## release history and notes
 
 A2CLOUD is sorta always in a state of development with tiny tweaks happening
 without announcement, often to the installer script rather than any visible
 features per se, and those changes and other small details are (somewhat)
-documented at the end of [the script itself][88]. But here are the noteworthy
+documented at the end of [the script itself][setup.txt]. But here are the noteworthy
 enhancements. To update, type `a2cloud-update`.
 
 ### v1.8.1, May 5, 2015
 
 * ADTPro 2.0.1
-
 * Apple II Pi client 1.5
 
 
 ### v1.8.0, March 17, 2015
 
 * compatible with every Raspberry Pi, including Raspberry Pi 2 Model B
-
 * GSport installed for non-Raspberry Pi computers, with option for
   new GS/OS+Spectrum installation, or GSport Internet Starter Kit premade
   image
-
 * Links web browser
-
 * desktop shortcuts and Apple II menu group for emulators and ADTPro
 * new `a2cloud-update os` command will perform full Raspple II update,
   including Raspbian OS and NOOBS install manager, A2CLOUD, A2SERVER, and
   Apple II Pi
-
 * many small improvements and fixes to A2CLOUD environment and installer
   script
 
@@ -1252,19 +1254,15 @@ enhancements. To update, type `a2cloud-update`.
 ### v1.7.2, February 7, 2015
 
 * supports Raspberry Pi Model A and A+ (and Pi 2 Model B)
-
 * resolves issues with Raspbian 2015-01-31 (kernel 3.18)
 
 
 ### v1.7.1, August 11, 2014
 
 * A2CLOUD is no longer “beta” on non-Raspberry Pi computers
-
 * A2CLOUD includes KEGS and Linapple on non-Raspberry Pi computers
-
 * A2CLOUD has a faster install script for non-Raspberry Pi computers
   (downloads binaries)
-
 * unbit/unexec/bsq archive tools are installed
 
 
@@ -1277,7 +1275,6 @@ enhancements. To update, type `a2cloud-update`.
 
 * ADTPro 2.0.0 (quicker and more reliable transfer; selectable filenames from
   list)
-
 * confirmed working on Raspberry Pi Model B+ (use the USB ports closer to the
   Ethernet port)
 
@@ -1285,36 +1282,27 @@ enhancements. To update, type `a2cloud-update`.
 ### v1.6.8, Apr 7, 2014
 
 * ADTPro 1.3.0
-
 * TTYtter installs properly on non-Pi systems
 
 
 ### v1.6.7, Feb 19, 2014
 
 * A2CLOUD boot floppy contains A2PI client version 1.4
-
 * A2CLOUD boot floppy splash screen provides simple menu for virtual drives,
   Apple II Pi, or BASIC
-
 * A2CLOUD.HDV is now called A2CLOUD.PO (a symbolic link called A2CLOUD.HDV is
   still there for backwards compatibility/habits)
-
 * bug fixes for `cppo`, `shk2image`, and some launcher scripts``
 
 
 ### v1.6.6, Feb 17, 2014
 
-* [beta support for Debian and Ubuntu Linux on non-Pi machines][25]
-
+* [beta support for Debian and Ubuntu Linux on non-Pi machines](#a2cloud-on-non-pi-computers)
 * ttytter support for color and avoiding non-ASCII characters when running
   under Screen
-
 * opens LXTerminal window by default when starting graphical desktop
-
 * a2cloud-setup installs Screen if not already installed
-
 * a2cloud-setup shows installed and available versions
-
 * a2cloud-setup -y bypasses all prompts
 
 
@@ -1328,7 +1316,6 @@ enhancements. To update, type `a2cloud-update`.
 
 * support for `screen` command to allow switching between multiple terminals
   on Apple II
-
 * `term -f` can be used to force emulation setting even when `term` doesn’t
   want to
 
@@ -1337,14 +1324,10 @@ enhancements. To update, type `a2cloud-update`.
 
 * Set TTYtter to always use -ssl mode, which is required by Twitter after
   14-Jan-14.
-
 * Set TTYtter to avoid display of non-ASCII characters on serial port shell
-
 * Set TTYtter to use color ANSI text (for IIgs) if shell is currently set to
   display it
-
 * Provided TTYtter readline module for enhanced input with -readline option
-
 * Added `appleiipi-update` command
 
 
@@ -1352,11 +1335,9 @@ enhancements. To update, type `a2cloud-update`.
 
 * Improved display of non-ASCII characters in Apple II terminal emulation
   programs
-
 * Support for “PC ANSI” colored text and graphics characters , for use with
   Spectrum’s ANSI online display, via new `term` command * Added `sciibin` and
   `unblu` for converting BinSCII and Binary II files
-
 * `baud` command supports 300 baud, in case you *really* want to kick it old
   school
 
@@ -1364,7 +1345,6 @@ enhancements. To update, type `a2cloud-update`.
 ### v1.6.1, Jan 14, 2014
 
 * Added `telnet` and `ttytter` (Twitter client)
-
 * fix for network boot failure when set up under v1.6
 
 
@@ -1374,21 +1354,17 @@ enhancements. To update, type `a2cloud-update`.
   price of a short delay on the `vsd1`/`vsd2` commands and a need to type
   `vsdsync` after changing an active virtual drive directly on the Pi; ability
   to run VSDRIVE from ProDOS program launcher, not just BASIC.SYSTEM)
-
 * if A2SERVER is installed, shares the ADTPro disks folder as ADTDISKS on the
   network
-
 * responds to name “raspberrypi.local” as alternative to IP address to Mac OS
-  X (and Windows with [Bonjour Print Services][52] installed) computers on
+  X (and Windows with [Bonjour Print Services][] installed) computers on
   network
 
 
 ### v1.5.2, Dec 22 2013
 
 * added `dos2pro` command
-
 * Apple II Pi is now installed with GSport emulator and “apple2user” packages
-
 * speedier install by downloading A2CLOUD disk images instead of building them
 
 
@@ -1396,26 +1372,19 @@ enhancements. To update, type `a2cloud-update`.
 
 * Adds IRC and newsreader clients (Irssi and Tin) and, with shortcuts for
   Apple II community (`a2chat` and `a2news` commands)
-
 * adds KEGS and LinApple emulators
-
 * installs Apple II Pi
-
-* easy installation via [Raspple II][28]
+* easy installation via [Raspple II][]
 
 
 ### v1.2.3, Nov 2013
 
 * A2PI client version 1.3 added to A2CLOUD disk
-
 * faster install for unar/lsar, nulib2, and cftp (downloads rather than
   compiles)
-
 * console (built-in serial) login disabled, to allow Apple II Pi to have that
   port
-
 * installs xrdp/tightvncserver for remote desktop access from another computer
-
 * adds DSK2FILE image utility to A2CLOUD disk
 
 
@@ -1429,13 +1398,12 @@ enhancements. To update, type `a2cloud-update`.
 * internet access and virtual drives for any Apple II via a Raspberry Pi;
   introduced at KansasFest 2013
 
-
 ##### This entry was posted on December 28, 2013 by [ivanx][].
+[setup.txt]: http://appleii.ivanx.com/a2cloud/setup/setup.txt "A2CLOUD setup script"
 
 * * *
 
-## A2CLOUD: other stuff
-{: #other-stuff }
+## other stuff
 
 This is a post for new techniques or features that aren’t fully ready, or
 other stuff that doesn’t seem to fit into the main guide. View the
@@ -1450,9 +1418,11 @@ Ivan's comments are included below, and obviously the order of posts is fixed
 in this Markdown file.  -Joseph
 -->
 
-### ivanx, January 26, 2014 at 4:03 pm
+### Email on A2CLOUD
 
-[Alistair Ross][89], who suggested the TTYtter client for Twitter that is now
+#### ivanx, January 26, 2014 at 4:03 pm
+
+[Alistair Ross][], who suggested the TTYtter client for Twitter that is now
 in A2CLOUD, has introduced me to the Mutt email client. Mutt requires a
 hand-built .muttrc file to put in account information, but Alistair has
 developed a wizard that will create one for Gmail and other IMAP servers. I
@@ -1460,14 +1430,18 @@ have more familiarity with Alpine (a clone of my first email client from the
 early 90’s, Pine), and may include one, or the other, or both, or neither, in
 a future A2CLOUD release.
 
-To install Mutt or Alpine, type: 
-`sudo apt-get install mutt` (or `alpine`) 
-also, get [Alistair’s Mutt configuration wizard][90]
+To install Mutt or Alpine, type:  
+`sudo apt-get install mutt` (or `alpine`)  
+also, get [Alistair’s Mutt configuration wizard][Mutt wizard]
 
+[Alistair Ross]: http://twitter.com/AJRossNZ
+[Mutt wizard]: http://pastebin.com/Mawvd2pZ
 
-### ivanx, January 26, 2014 at 9:44 pm
+### Alternative text-only web browsers
 
-[Alistair Ross][88] also suggested the Links web browser. It has a cleaner
+#### ivanx, January 26, 2014 at 9:44 pm
+
+[Alistair Ross][] also suggested the Links web browser. It has a cleaner
 layout than Lynx does, devoting more screen space to web content (especially
 valuable on the Apple II’s 80×24 display). You get nothing but a blank screen
 on startup, but press ESC to get a menu bar, and from there it’s
@@ -1475,31 +1449,32 @@ self-explanatory. On a IIgs with Spectrum’s ANSI online display, you need to
 enable its color support from the Settings menu. There’s also a derivative
 called “Elinks” which at first glance seems to have more accurate color
 support (select “16 colors” from its setup menu). Alistair also suggested w3m,
-which I haven’t tried. You can get any of these with: 
+which I haven’t tried. You can get any of these with:  
 `sudo apt-get install links` (or `elinks`, or `w3m`)
 
+### Other image extraction methods
 
-### ivanx, January 26, 2014 at 10:08 pm
+#### ivanx, January 26, 2014 at 10:08 pm
 
-In [this comp.sys.apple2 thread][91] I discuss various techniques for copying
+In [this comp.sys.apple2 thread][csa2 copy-from-a2img] I discuss various techniques for copying
 contents of Apple II floppy images to another disk. In this case, it’s a hard
 disk image file used by a CFFA 3000 card, but it could be any kind of “hard
 disk”, including a Focus or MicroDrive card, or one provided by VSDRIVE such
 as the default 4 MB disk in S2,D1.
 
+[csa2 copy-from-a2img]: https://groups.google.com/forum/#!msg/comp.sys.apple2/VGvddYfn_wk/eFrQ-u3qBkUJ
 
-### ivanx, February 17, 2014 at 9:43 pm
+### A2CLOUD on non-Pi computers
+
+#### ivanx, February 17, 2014 at 9:43 pm
 
 A2CLOUD can be installed on Debian or Ubuntu Linux (and possibly derivatives).
 It has been tried on the 32-bit versions of Debian 7 and Ubuntu Server 13.10.
-To install, type: 
+To install, type:  
+`wget ivanx.com/a2cloud/setup; source setup`{: .language-bash }
 
-~~~ bash
-wget ivanx.com/a2cloud/setup; source setup
-~~~
-
-You can also install it into the [A2SERVER][92] virtual machine with the same
-command, or start fresh with the premade [A2SERVER+A2CLOUD][92] virtual
+You can also install it into the [A2SERVER][A2SERVER vbox] virtual machine with the same
+command, or start fresh with the premade [A2SERVER+A2CLOUD][A2SERVER vbox] virtual
 machine. To use a USB-to-serial adapter with the VM, click the USB icon in the
 bottom of the window, and select the adapter. If you have two, repeat. If you
 want it to be automatically recognized, you can add it under
@@ -1520,78 +1495,11 @@ or unplug both adapters and reattach one at a time, starting with the one
 connected to the Apple II printer port.
 
 Apple II Pi is not offered as an installation option on non-Pi computers,
-though if you’re dedicated, you can compile it yourself [here][93].
+though if you’re dedicated, you can compile it yourself [here][GH dschmenk/apple2pi].
 
+[A2SERVER vbox]: ../a2server/a2server_virtualbox.html
+[GH dschmenk/apple2pi]: https://github.com/dschmenk/apple2pi "Apple II Pi source code"
 
 ##### This entry was posted on January 26, 2014 by [ivanx][].
 </section>
 
-[24]: http://www.raspberrypi.org "Raspberry Pi"
-[25]: #ivanx-february-17-2014-at-943-pm "A2CLOUD on non-Pi computers"
-[26]: http://appleii.ivanx.com/a2server/ "A2SERVER"
-[27]: http://schmenk.is-a-geek.com/wordpress/ "Apple II Pi"
-[28]: http://appleii.ivanx.com/rasppleii/ "Raspple II"
-[30]: #apple-ii-plus-and-unenhanced-iie "A2CLOUD: log in from your Apple II"
-[31]: http://www.raspberrypi.org/products/ "Raspberry Pi purchase"
-[32]: http://www.amazon.com/s/ref=nb_sb_ss_i_0_4?url=search-alias%3Daps&amp;field-keywords=raspberry+pi+2&amp;sprefix=rasp%2Caps%2C173 "Raspberry Pi 2 Model B search - Amazon"
-[33]: http://www.amazon.com/gp/product/B00LPESRUK/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B00LPESRUK&amp;linkCode=as2&amp;tag=ivane-20&amp;linkId=B7F2LQNXIWGYCNYQ "Raspberry Pi 1 model B+ - Amazon"
-[34]: http://www.amazon.com/gp/product/B009SQQF9C/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B009SQQF9C&amp;linkCode=as2&amp;tag=ivane-20 "Raspberry Pi 1 model B - Amazon"
-[35]: http://www.amazon.com/Raspberry-Pi-Model-A-256MB/dp/B00PEX05TO/ref=sr_1_1?ie=UTF8&amp;qid=1423325260&amp;sr=8-1&amp;keywords=raspberry+pi+model+a%2B "Raspberry Pi 1 model A+ - Amazon"
-[36]: http://www.amazon.com/s/?_encoding=UTF8&amp;camp=1789&amp;creative=390957&amp;field-keywords=4gb%20sd%20card&amp;linkCode=ur2&amp;rh=i%3Aaps%2Ck%3A4gb%20sd%20card&amp;sprefix=4gb%20s%2Caps&amp;tag=ivane-20&amp;url=search-alias%3Daps "SD card"
-[37]: http://www.amazon.com/s/?_encoding=UTF8&amp;camp=1789&amp;creative=390957&amp;field-keywords=8gb%20sd%20card&amp;linkCode=ur2&amp;rh=i%3Aaps%2Ck%3A4gb%20sd%20card&amp;sprefix=4gb%20s%2Caps&amp;tag=ivane-20&amp;url=search-alias%3Daps "8 GB SD card at Amazon"
-[38]: http://www.amazon.com/gp/product/B00A9PO5AM/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B00A9PO5AM&amp;linkCode=as2&amp;tag=ivane-20
-[39]: http://www.amazon.com/s/?_encoding=UTF8&amp;camp=1789&amp;creative=390957&amp;field-keywords=ethernet%20cable&amp;linkCode=ur2&amp;rh=i%3Aaps%2Ck%3Aethernet%20cable&amp;sprefix=ethernet%2Caps&amp;tag=ivane-20&amp;url=search-alias%3Daps "ethernet cable"
-[40]: http://ivanx.com/raspberrypi/raspberrypi_wifi.html "Raspberry Pi WiFi"
-[41]: http://retrofloppy.com/products.html "Apple II null modem serial cable"
-[42]: http://adtpro.sourceforge.net/connectionsserial.html "ADTPro serial connections"
-[43]: http://www.amazon.com/gp/product/B0007T27H8/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B0007T27H8&amp;linkCode=as2&amp;tag=ivane-20 "TRENDnet TU-S9 USB-to-serial adapter"
-[44]: http://www.ebay.com/sch/i.html?_nkw=apple+super+serial+card "eBay - Apple Super Serial Card"
-[45]: http://www.amazon.com/gp/product/B006T9B6R2/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B006T9B6R2&amp;linkCode=as2&amp;tag=ivane-20 "SD card reader"
-[46]: http://www.amazon.com/s/?_encoding=UTF8&amp;camp=1789&amp;creative=390957&amp;field-keywords=usb%20keyboard&amp;linkCode=ur2&amp;rh=i%3Aaps%2Ck%3Ausb%20keyboard&amp;tag=ivane-20&amp;url=search-alias%3Daps "USB keyboard"
-[47]: http://www.amazon.com/s/?_encoding=UTF8&amp;camp=1789&amp;creative=390957&amp;field-keywords=usb%20mouse&amp;linkCode=ur2&amp;rh=i%3Aaps%2Ck%3Ausb%20mouse&amp;tag=ivane-20&amp;url=search-alias%3Daps "USB mouse"
-[48]: http://www.amazon.com/s/?_encoding=UTF8&amp;camp=1789&amp;creative=390957&amp;field-keywords=powered%20usb%20hub&amp;linkCode=ur2&amp;rh=i%3Aaps%2Ck%3Apowered%20usb%20hub&amp;tag=ivane-20&amp;url=search-alias%3Daps "powered USB hub"
-[49]: http://ultimateapple2.com "Apple II Pi card from Ultimate Apple 2"
-[50]: http://www.pridopia.co.uk/pi-232r1-db9.html "Raspberry Pi console cable"
-[51]: http://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Delectronics&amp;field-keywords=db9+male+female+null+modem+adapter+-usb&amp;rh=n%3A172282%2Ck%3Adb9+male+female+null+modem+adapter+-usb "DE-9 male-to-female null modem adapters at Amazon"
-[52]: https://www.sdcard.org/downloads/formatter_4/
-[53]: http://support.apple.com/kb/dl999
-[54]: http://www.chiark.greenend.org.uk/~sgtatham/putty/
-[55]: http://ivanx.com/raspberrypi/files/PiFinder.zip
-[56]: http://www.advanced-ip-scanner.com/
-[57]: https://itunes.apple.com/us/app/microsoft-remote-desktop/id715768417?mt=12 "Microsoft Remote Desktop for Mac"
-[58]: http://elinux.org/RPi_VNC_Server "configure TightVNCServer"
-[59]: http://elinux.org/Configuring_a_Static_IP_address_on_your_Raspberry_Pi "Raspberry Pi static IP address"
-[60]: http://adtpro.sourceforge.net/vdrive.html "VSDRIVE"
-[61]: http://adtpro.sourceforge.net/ "ADTPro"
-[62]: http://appleii.ivanx.com/a2cloud/files/A2CLOUD.DSK "140K A2CLOUD boot disk"
-[63]: http://appleii.ivanx.com/a2cloud/files/A2CLOUD.HDV "800K A2CLOUD boot disk"
-[64]: http://apple2.info/wiki/index.php?title=DOS#Commands_quick_reference "ProDOS and DOS 3.3 commands"
-[65]: http://www.apple2scans.net/?p=33 "BASIC Programming with ProDOS"
-[66]: http://lostclassics.apple2.info/announcements/19/proterm-a2/ "ProTERM"
-[67]: http://www.wannop.info/speccie/Site/Speccies_Home_Pages.html "Spectrum for Apple IIgs"
-[68]: http://www.bartbania.com/index.php/linux-screen/ "using Screen"
-[69]: http://www.wannop.info/speccie/Site/Download_Centre.html "Spectrum download"
-[70]: http://macgui.com/downloads/?file_id=24237 "Mac GUI Vault: Kermit 3.87"
-[71]: https://groups.google.com/d/msg/comp.sys.apple2/8yUpfbAgdx0/oVwep6fMsTYJ "VT-100 on Apple II Plus and unenhanced IIe"
-[72]: http://www.irchelp.org/ "IRC Help"
-[73]: http://www.irssi.org/documentation/ "Irssi Documentation"
-[74]: http://www.floodgap.com/software/ttytter/ "TTYtter"
-[75]: #ivanx-january-26-2014-at-403-pm "email on A2CLOUD"
-[76]: http://elinux.org/RPi_Chromium "Chromium (Google Chrome for Raspberry Pi)"
-[77]: http://elinux.org/RPi_IceWeasel "Iceweasel (Firefox for Raspbian)"
-[78]: #ivanx-january-26-2014-at-944-pm
-[79]: http://unarchiver.c3.cx/formats "The Unarchiver supported formats"
-[80]: https://groups.google.com/forum/#!searchin/comp.sys.apple2/115200$20hugh "Hugh Hood's 115200 baud ProTERM macros"
-[81]: http://gsport.sourceforge.net/ "GSport"
-[82]: http://linapple.sourceforge.net/ "LinApple"
-[83]: http://kegs.sourceforge.net/ "KEGS"
-[84]: http://kegs.sourceforge.net/README.kegs.txt "KEGS instructions"
-[85]: https://ultimateapple2.com/ "Apple II Pi card"
-[86]: http://www.amazon.com/s/?_encoding=UTF8&amp;camp=1789&amp;creative=390957&amp;field-keywords=db9%20male%20null%20modem%20adapter%20-usb%20-female&amp;linkCode=ur2&amp;rh=n%3A172282%2Ck%3Adb9%20male%20null%20modem%20adapter%20-usb%20-female&amp;tag=ivane-20&amp;url=search-alias%3Delectronics "DE-9 male-to-male null modem adapter"
-[87]: https://www.ultimateapple2.com/forums/ "Ultimate Apple 2 forums"
-[88]: http://appleii.ivanx.com/a2cloud/setup/setup.txt "A2CLOUD setup script"
-[89]: http://twitter.com/AJRossNZ
-[90]: http://pastebin.com/Mawvd2pZ
-[91]: https://groups.google.com/forum/#!msg/comp.sys.apple2/VGvddYfn_wk/eFrQ-u3qBkUJ
-[92]: http://appleii.ivanx.com/a2server/a2server_virtualbox.html
-[93]: https://github.com/dschmenk/apple2pi "Apple II Pi source code"
